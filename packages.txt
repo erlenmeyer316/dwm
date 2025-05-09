@@ -1,27 +1,45 @@
-arandr 0.1.11-4
-base-devel 1-2
-fd 10.2.0-1
-feh 3.10.3-1
-fzf 0.61.3-1
-git 2.49.0-1
-github-cli 2.72.0-1
-imlib2 1.12.5-1
-lazygit 0.50.0-1
-libxft 2.3.9-1
-libxinerama 1.1.5-2
-luarocks 3.11.1-2
-man-db 2.13.1-1
-man-pages 6.13-1
-neovim 0.11.1-2
-openssh 10.0p1-3
-plocate 1.1.23-1
-qutebrowser 3.5.0-1
-ripgrep 14.1.1-1
-ttf-jetbrains-mono-nerd 3.4.0-1
-unzip 6.0-22
-wget 1.25.0-2
-xorg-server 21.1.16-1
-xorg-xinit 1.4.4-1
-xorg-xrandr 1.5.3-1
-xorg-xsetroot 1.1.3-2
-zip 3.0-11
+arandr
+base
+base-devel
+fastfetch
+fd
+feh
+fontconfig
+fzf
+git
+github-cli
+grub
+gst-plugin-pipewire
+imlib2
+lazygit
+libpulse
+libxft
+libxinerama
+linux
+linux-firmware
+luarocks
+man-db
+man-pages
+neovim
+networkmanager
+open-vm-tools
+openssh
+pipewire
+pipewire-alsa
+pipewire-jack
+pipewire-pulse
+plocate
+qutebrowser
+ripgrep
+ttf-jetbrains-mono-nerd
+unzip
+wget
+wireplumber
+xf86-input-vmmouse
+xf86-video-vmware
+xorg-server
+xorg-xinit
+xorg-xrandr
+xorg-xsetroot
+zip
+zram-generator
