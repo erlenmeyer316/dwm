@@ -82,7 +82,7 @@
 #define BAR_LAYOUTMENU_PATCH 0
 
 /* Show layout symbol in bar */
-#define BAR_LTSYMBOL_PATCH 0
+#define BAR_LTSYMBOL_PATCH 1
 
 /* Adds powerline arrows for the status.
  * This uses statuscolors logic for choosing colors for the powerline. As these markers
@@ -477,7 +477,7 @@
  * This patch takes precedence over ATTACHBELOW_PATCH.
  * https://dwm.suckless.org/patches/attachaside/
  */
-#define ATTACHASIDE_PATCH 0
+#define ATTACHASIDE_PATCH 1
 
 /* This patch adds new clients below the selected client.
  * This patch takes precedence over ATTACHBOTTOM_PATCH.
