@@ -1,5 +1,7 @@
 /* See LICENSE file for copyright and license details. */
 #include "patch/exitdwm.c"
+#include "X11/XF86keysym.h"
+
 /* Helper macros for spawning commands */
 #define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
 #define CMD(...)   { .v = (const char*[]){ __VA_ARGS__, NULL } }
@@ -164,11 +166,11 @@ static void (*bartabmonfns[])(Monitor *) = { NULL /* , customlayoutfn */ };
 #endif // MONOCLE_LAYOUT
 #endif // BAR_TABGROUPS_PATCH
 #if BAR_PANGO_PATCH
-static const char font[]                 = "monospace 12";
+static const char font[]                 = "monospace 14";
 #else
-static const char *fonts[]               = { "monospace:size=12" };
+static const char *fonts[]               = { "monospace:size=14" };
 #endif // BAR_PANGO_PATCH
-static const char dmenufont[]            = "monospace:size=12";
+static const char dmenufont[]            = "monospace:size=14";
 
 static char c000000[]                    = "#000000"; // placeholder value
 
@@ -881,6 +883,9 @@ static const char *dmenucmd[] = {
 	NULL
 };
 static const char *termcmd[]  = { "st", NULL };
+static const char *copycmd[]  = { "xclip", "-selection", "clipboard", NULL };
+static const char *pastecmd[] = { "xclip", "-selection", "clipboard" "-o", NULL };
+
 
 #if BAR_STATUSCMD_PATCH
 #if BAR_DWMBLOCKS_PATCH
@@ -1013,8 +1018,10 @@ static const Key keys[] = {
 	#if KEYMODES_PATCH
 	{ MODKEY,                       XK_Escape,     setkeymode,             {.ui = COMMANDMODE} },
 	#endif // KEYMODES_PATCH
-	{ MODKEY,                       XK_space,          spawn,                  {.v = dmenucmd } },
-	{ MODKEY,             XK_Return,     spawn,                  {.v = termcmd } },
+        { MODKEY,                       XK_c,          spawn,                  {.v = copycmd } },
+        { MODKEY,                       XK_v,          spawn,                  {.v = pastecmd } },
+	{ MODKEY,                       XK_space,      spawn,                  {.v = dmenucmd } },
+	{ MODKEY,                       XK_Return,     spawn,                  {.v = termcmd } },
 	#if RIODRAW_PATCH
 	{ MODKEY|ControlMask,           XK_p,          riospawnsync,           {.v = dmenucmd } },
 	{ MODKEY|ControlMask,           XK_Return,     riospawn,               {.v = termcmd } },
